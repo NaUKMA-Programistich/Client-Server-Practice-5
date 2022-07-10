@@ -14,7 +14,7 @@ data class EndpointHandler(
     }
 
     fun handle(exchange: HttpExchange) {
-        exchange.responseHeaders["jwt"] = listOf("application/json")
+        exchange.responseHeaders["Content-Type"] = listOf("application/json")
         handler.invoke(exchange)
     }
 }
